@@ -1,0 +1,207 @@
+<div class="d-flex flex-row">
+  <div class="create p-5" id="opeen">
+    <a (click)="onOpenModal()" data-placement="top" data-original-title="Create">
+      <div class="card1">
+        <p class="text-white font-weight-bold "><span><i
+              class="fa-solid fa-circle-plus fa-2xl text-white  me-1"></i></span>Create Branch</p>
+      </div>
+    </a>
+  </div>
+  <div class="create p-5">
+    <a (click)="onOpenRegistrationModal()" data-placement="top" data-original-title="Create">
+      <div class="card1">
+  
+        <p class="text-white font-weight-bold "><span><i
+              class="fa-solid fa-circle-plus fa-2xl text-white  me-1"></i></span>Add Manager</p>
+      </div>
+    </a>
+  </div>
+  <div class="create p-5">
+    <a (click)="onOpenLoanModal()" data-placement="top" data-original-title="Create">
+      <div class="card1">
+  
+        <p class="text-white font-weight-bold "><span><i
+              class="fa-solid fa-circle-plus fa-2xl text-white  me-1"></i></span>Add Loan</p>
+      </div>
+    </a>
+  </div>
+  </div>
+  
+  <!-- branch  -->
+  <div id="updateUserModal" role="dialog" aria-labelledby="updateUserModal" class="modal fade" data-bs-backdrop="static"
+    data-bs-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content modalContent">
+        <div class="modal-header modalHeader">
+          <h3 class="modal-title modalTitle" id="updateuserModalLabel">Add Branch</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 18px;
+              margin-right:5px;"></button>
+        </div>
+        <div class="modal-body modalBody">
+          <form #createForm="ngForm">
+            <div class="input-group mb-3">
+              <span class="input-group-text branchInputSpan" id="inputGroup-sizing-default">BranchName</span>
+              <input type="text" class="form-control" [(ngModel)]="branchname" name="branchname"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text branchInputSpan" id="inputGroup-sizing-default">Manager</span>
+              <select class="form-select" id="floatingSelect" [(ngModel)]="manager" name="manager">
+                <option *ngFor="let manager of managerList" value="{{manager}}">{{manager}}</option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="" data-bs-dismiss="modal" class="closeBtn">
+                Close
+              </button>
+              <button (click)="onCreate()" data-bs-dismiss="modal" class="applyBtn">
+                Add
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- loan  -->
+  <div id="loan" role="dialog" aria-labelledby="loan" class="modal fade" data-bs-backdrop="static"
+    data-bs-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+      <div class="modal-content modalContent">
+        <div class="modal-header modalHeader">
+          <h3 class="modal-title modalTitle" id="updateuserModalLabel">Add Loan</h3>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 18px;
+                        margin-right:5px;"></button>
+        </div>
+        <div class="modal-body modalBody">
+          <form #createForm="ngForm">
+            <div class="input-group mb-3">
+              <span class="input-group-text loanInputSpan" id="inputGroup-sizing-default">Lone Type</span>
+              <input type="text" class="form-control" [(ngModel)]="loan_type" name="loan_type"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text loanInputSpan" id="inputGroup-sizing-default">image</span>
+              <input type="text" class="form-control" [(ngModel)]="loan_url" name="loan_url"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text loanInputSpan" id="inputGroup-sizing-default">Rate</span>
+              <input type="number" class="form-control" [(ngModel)]="loan_interest" name="loan_interest"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+           
+            <div class="modal-footer">
+              <button type="button" id="" data-bs-dismiss="modal" class="closeBtn">
+                Close
+              </button>
+  
+              <button (click)="onAddloan()" data-bs-dismiss="modal" class="applyBtn">
+                Add
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ps-md-5 pe-md-5 mt-1 mt-md-3 ">
+    <h1 class="text-bold">All Branches in Bank:</h1>
+    <table class="table table-striped border shadow-sm mt-2 heighter">
+      <thead>
+        <tr class="table-primary">
+          <th scope="col" sortable="AccountNumbaer">BranchName</th>
+          <th scope="col" sortable="UserName">Ifsc Code</th>
+          <th scope="col" sortable="Balance">Manager</th>
+          <!-- <th scope="col" sortable="branch">Branch</th>
+          <th scope="col">Approve/Deny</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of branches">
+          <th scope="row">{{ user.branchName }}</th>
+          <td style="cursor: pointer;">{{user.branchCode}}</td>
+          <td>{{user.userName}}</td>
+          <!-- <td>{{user.branchName}}</td>
+          <td>
+                      <button class="btn rounded-circle me-3 text-success"><i class="fa fa-check"></i></button>
+                      <button class="btn rounded-circle text-danger"><i class="fa fa-xmark"></i></button>
+                  </td> -->
+        </tr>
+      </tbody>
+    </table>
+  
+   
+  </div>
+  
+  
+  
+  
+  <!-- manager -->
+  <div id="addManagerModal" role="dialog" aria-labelledby="addManagerModal" class="modal fade" data-bs-backdrop="static"
+    data-bs-keyboard="false" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+      <div class="modal-content modalContent">
+        <div class="modal-header modalHeader">
+          <h3 class="modal-title modalTitle" id="addManagerModal">Add Manager</h3>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 18px;
+                        margin-right:5px;"></button>  
+        </div>
+        <div class="modal-body modalBody">
+          <form #addManager="ngForm">
+            <div class="input-group mb-3">  
+              <span class="input-group-text managerInputSpan" id="inputGroup-sizing-default">Manager Name</span>
+              <input type="text" class="form-control" [(ngModel)]="managername" name="managername"
+              aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              
+            </div>
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text managerInputSpan" id="inputGroup-sizing-default">Manager Email</span>
+              <input type="text" class="form-control" [(ngModel)]="manageremail" name="manageremail"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+  
+              <div class="input-group mb-3">
+  
+                <span class="input-group-text managerInputSpan" id="inputGroup-sizing-default">Manager Phone No.</span>
+                <input type="text" class="form-control" [(ngModel)]="managerphone" name="managerphone"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+              </div>
+  
+              <div class="input-group mb-3">
+                <span class="input-group-text managerInputSpan" id="inputGroup-sizing-default">Gender</span>
+                <select class="form-select" id="floatingSelect" [(ngModel)]="managergender" name="managergender">
+                  <option selected value="Male">Male</option>
+                  <option  value="Female">Female</option>
+                </select>
+              
+            </div>
+  
+            <div class="input-group mb-3">
+  
+              <span class="input-group-text managerInputSpan" id="inputGroup-sizing-default">Manager Address</span>
+              <input type="text" class="form-control" [(ngModel)]="manageraddress" name="manageraddress"
+              aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+  
+            <div class="input-group mb-3">
+              <span class="input-group-text managerInputSpan" id="inputGroup-sizing-default">Manager Password</span>
+              <input type="password" class="form-control" [(ngModel)]="managerpassword" name="managerpassword"
+                aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+  
+            <div class="modal-footer">
+              <button type="button" id="addManager" data-bs-dismiss="modal" class="closeBtn">
+                Close
+              </button>
+  
+              <button (click)="onAddManager()" data-bs-dismiss="modal" class="applyBtn">
+                Add
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

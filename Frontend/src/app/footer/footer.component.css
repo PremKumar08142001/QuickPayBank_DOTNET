@@ -1,0 +1,40 @@
+.futer{
+    background: rgb(255, 255, 255);
+    width: 100%;
+    
+}
+
+.col{
+    width: 0ch;
+    height: 0ch;
+}
+
+.footer_profile ul li a {
+	background: #554c86;
+	width: 40px;
+	height: 40px;
+	display: block;
+	text-align: center;
+	margin-right: 5px;
+	border-radius: 50%;
+	line-height: 40px;
+	box-sizing: border-box;
+	text-decoration: none;
+	-webkit-transition: .3s;
+	transition: .3s;
+	color: #fff;
+}
+
+.footer_profile{margin-bottom:40px;}
+.footer_profile ul{
+list-style: outside none none;
+margin: 0;
+padding: 0
+}
+.footer_profile ul li{
+display: inline-block;
+}
+@media only screen and (max-width:480px) { 
+.footer_profile ul li{margin:2px;}
+}
+.footer_profile ul li a img{width:60px;}

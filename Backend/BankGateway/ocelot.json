@@ -1,0 +1,282 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/Authentication/login",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7299
+                }
+            ],
+            "UpstreamPathTemplate": "/login",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Authentication/{name}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7299
+                }
+            ],
+            "UpstreamPathTemplate": "/userByName/{name}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Authentication",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7299
+                }
+            ],
+            "UpstreamPathTemplate": "/getManagers",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Authentication/register",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7299
+                }
+            ],
+            "UpstreamPathTemplate": "/register",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Authentication/register-admin",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7299
+                }
+            ],
+            "UpstreamPathTemplate": "/register-admin",
+            "UpstreamHttpMethod": [ "POST" ]
+
+        },
+        {
+            "DownstreamPathTemplate": "/Authentication/register-manager",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7299
+                }
+            ],
+            "UpstreamPathTemplate": "/register-manager",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Account/accountExist/{username}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7290
+                }
+            ],
+            "UpstreamPathTemplate": "/accountExist/{username}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Account/byuserId/{userId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7290
+                }
+            ],
+            "UpstreamPathTemplate": "/byuserId/{userId}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Account/byBranchcode/{branchCode}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7290
+                }
+            ],
+            "UpstreamPathTemplate": "/byBranchcode/{branchCode}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Account",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7290
+                }
+            ],
+            "UpstreamPathTemplate": "/Account",
+            "UpstreamHttpMethod": [ "GET", "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Account/byName/{username}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7290
+                }
+            ],
+            "UpstreamPathTemplate": "/accounbyName/{username}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Account/updateBalance",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7290
+                }
+            ],
+            "UpstreamPathTemplate": "/updateBalance",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Account/byId/{userId}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7290
+                }
+            ],
+            "UpstreamPathTemplate": "/Account/byId/{userId}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Branch",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7068
+                }
+            ],
+            "UpstreamPathTemplate": "/Branch",
+            "UpstreamHttpMethod": [ "GET", "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Branch/{username}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7068
+                }
+            ],
+            "UpstreamPathTemplate": "/Branch/{username}",
+            "UpstreamHttpMethod": [ "GET", "DELETE" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Branch/branchelist",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7068
+                }
+            ],
+            "UpstreamPathTemplate": "/branchelist",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Transaction",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7127
+                }
+            ],
+            "UpstreamPathTemplate": "/Transaction",
+            "UpstreamHttpMethod": [ "GET", "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/Transaction/suspicious",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7127
+                }
+            ],
+            "UpstreamPathTemplate": "/Transaction/suspicious",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/TransactionMonitoring/analyze",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7064
+                }
+            ],
+            "UpstreamPathTemplate": "/TransactionMonitoring/analyze",
+            "UpstreamHttpMethod": [ "POST" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/LoansApplied",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ],
+            "UpstreamPathTemplate": "/LoansApplied",
+            "UpstreamHttpMethod": [ "POST", "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/LoansOffered",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ],
+            "UpstreamPathTemplate": "/LoansOffered1",
+            "UpstreamHttpMethod": [ "POST", "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/LoansApplied/byuserName/{userName}",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ],
+            "UpstreamPathTemplate": "/loan/{userName}",
+            "UpstreamHttpMethod": [ "GET" ]
+        },
+        {
+            "DownstreamPathTemplate": "/api/LoansApplied/updateloan",
+            "DownstreamScheme": "https",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "localhost",
+                    "Port": 7264
+                }
+            ],
+            "UpstreamPathTemplate": "/updateloan",
+            "UpstreamHttpMethod": [ "GET" ]
+        }
+
+    ]
+}

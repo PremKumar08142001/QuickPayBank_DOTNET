@@ -1,0 +1,223 @@
+<!-- <section class="abc background-color d-flex justify-content-center align-items-center">
+<div class="container" #container>
+    <div class="row">
+
+    
+    <div class="col col-md-6 col-sm-12">
+        <div class="form-container sign-up-container">
+          <form [formGroup]="registerform" (ngSubmit)="register()" >
+            <h2 class="text-center text-bold">Register</h2>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="email">
+            </div>
+            <small>
+                  <span *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger  m-1 errspan">
+                  <span *ngIf="email?.errors?.['required']" class="height:1vh errspan"> Email is required. </span>
+                  <span *ngIf="email?.errors?.['pattern']" class="errspan">
+                    Not an email
+                  </span>
+                  
+                </span>
+              </small>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="name">
+            </div>
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Address</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="address">
+            </div>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Gender</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="gender">
+            </div>
+            
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Mobile Noo</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="mobile">
+            </div>
+            <span *ngIf="mobile?.invalid && (mobile?.dirty || mobile?.touched)" class="alert alert-danger  m-1">
+              <span *ngIf="mobile?.errors?.['required']" class="height:1vh"> Mobile is required. </span>
+              <span *ngIf="mobile?.errors?.['minlength']">
+                Phone number should of 10 digits
+              </span>
+            </span>
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="inputGroup-sizing-default">Passowrd</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="password1">
+            </div>
+           <small> <span *ngIf="password1?.invalid && (password1?.dirty || password1?.touched)" class="alert alert-danger  m-1">
+              <span *ngIf="password1?.errors?.['required']" class="height:1vh"> Passwordd is required. </span>
+              <span *ngIf="password1?.errors?.['minlength']">
+                password should be minimum 4 letters
+              </span>
+              </span>
+            </small>
+            <button class=" btn btn-primary w-100" type="submit" [disabled]="!registerform.valid" >Register</button>
+          
+          </form>
+        </div>
+    </div>
+    <div class="col col-md-6 col-sm-12">    
+        <div class="form-container sign-in-container">
+           
+          <form  [formGroup] = "loginform" (ngSubmit)="login()" >
+            <span style="color: red;">{{loginMessage}}</span>
+            <h2 class="text-center text-bold">Login</h2>
+            <div class="input-group mb-3">
+              <span class="input-group-text w-25" id="inputGroup-sizing-sm">userName</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="userName">
+            </div>
+            <span *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)" class="alert alert-danger  m-1 errspan">
+              <span *ngIf="userName?.errors?.['required']" class="height:1vh errspan"> userName is required. </span>
+              <span *ngIf="userName?.errors?.['minlength']" class="errspan">
+                User Name should be minimum 4 letters
+              </span>
+            </span>
+            <div class="input-group mb-3">
+              <span class="input-group-text w-25" id="inputGroup-sizing-default">Passowrd</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="password">
+            </div>
+            <span *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger  m-1 errspan">
+              <span *ngIf="password?.errors?.['required']" class=" errspan">Password is required. </span>
+              <span *ngIf="password?.errors?.['minlength']" class="errspan">
+                password should be minimum 4 letters
+              </span>
+              </span>
+          
+            <button class="button btn btn-primary w-100" type="submit" [disabled]="!loginform.valid" >Singin</button>
+          </form>
+
+              
+        </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" (click)="signIn()">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>QuickPay Bank</h1>
+                        <p>Start your New journey with us Seamlessly</p>
+                        <button class="ghost" (click)="signUp()">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</section> -->
+<section class="abc background-color d-flex justify-content-center align-items-center">
+  <div class="container" #container>
+      <div class="row">
+  
+      
+      <div class="col col-md-6 col-sm-12">
+          <div class="form-container sign-up-container">
+            <form  [formGroup]="registerForm" (ngSubmit)="register(registerForm)" autocomplete="off">
+              <span style="color: red;">{{registerMessage}}</span>
+           
+              <h1 class="loginDivHeading">Register</h1>
+  
+                <div class="input-group mb-3 w-100 customInputDiv">
+                  <span class="input-group-text customRegisterInputSpan">Email</span>
+                  <div class="form-floating">
+                    <input type="email" class="form-control customInputField" formControlName="email" id="email">
+                    <label for="email" class="errLabel">{{getEmailErrorMessage()}}</label>
+                  </div>
+                </div>
+                <div class="input-group mb-3 w-100 customInputDiv">
+                  <span class="input-group-text customRegisterInputSpan">Name</span>
+                  <div class="form-floating">
+                    <input type="text" class="form-control customInputField" formControlName="name" id="name">
+                    <label for="name" class="errLabel">{{getNameErrorMessage()}}</label>
+                  </div>
+                </div>
+                <div class="input-group mb-3 w-100 customInputDiv">
+                  <span class="input-group-text customRegisterInputSpan">Gender</span>
+                <select class="form-select" aria-label="Default select example" id="gender" formControlName="gender">
+                  <option selected value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+                </div>
+                <div class="input-group mb-3 w-100 customInputDiv">
+                  <span class="input-group-text customRegisterInputSpan">Mobile</span>
+                    <div class="form-floating">
+                      <input type="number" class="form-control customInputField"  formControlName="mobile" id="mobile">
+                      <label for="mobile" class="errLabel">{{getMobileErrorMessage()}}</label>
+                    </div>
+                </div>
+                <div class="input-group mb-3 w-100 customInputDiv">
+                  <span class="input-group-text customRegisterInputSpan">Address</span>
+                  <div class="form-floating">
+                    <input type="text" class="form-control customInputField" formControlName="address" id="address">
+                    <label for="address" class="errLabel">{{getAddressErrorMessage()}}</label>
+                  </div>
+                </div>
+                <div class="input-group mb-3 w-100 customInputDiv">
+                  <span class="input-group-text customRegisterInputSpan">Password</span>
+                  <div class="form-floating">
+                    <input  type="password" class="form-control customInputField" formControlName="password1" id="password1">
+                    <label for="password1" class="errLabel">{{getPassword1ErrorMessage()}}</label>
+                  </div>
+                </div>
+              <button class=" btn btn-primary w-100 mt-3" type="submit" [disabled]="!registerForm.valid" >Register</button>
+            
+            </form>
+          </div>
+      </div>
+      <div class="col col-md-6 col-sm-12">    
+          <div class="form-container sign-in-container">
+             
+            <form  [formGroup] = "loginform" (ngSubmit)="login()" autocomplete="off">
+              <span style="color: red;">{{loginMessage}}</span>
+              <h2 class="loginDivHeading">Login</h2>
+  
+              <div class="input-group mb-3 w-100 customInputDiv">
+                <span class="input-group-text customLoginInputSpan " style="color: black;">Username</span>
+                <div class="form-floating">
+                  <input type="text" class="form-control customInputField" formControlName="userName" id="userName">
+                  <label for="userName" class="errLabel">{{getUserNameErrorMessage()}}</label>
+                </div>
+              </div>
+              <div class="input-group mb-3 w-100 customInputDiv">
+                <span class="input-group-text customLoginInputSpan" style="color: black;">Password</span>
+                <div class="form-floating">
+                  <input type="password" class="form-control customInputField" formControlName="password" id="password">
+                  <label for="password" class="errLabel">{{getPasswordErrorMessage()}}</label>
+                </div>
+              </div>
+  
+              <button class="button btn btn-primary w-100" type="submit" [disabled]="!loginform.valid" >Login</button>
+            </form>
+  
+                
+          </div>
+              <div class="overlay-container">
+                  <div class="overlay">
+                      <div class="overlay-panel overlay-left">
+                        <div class="overlayRightContainer mb-4">
+                          <img src="../../assets/img/logo-nav.png" alt="">
+                          <h1>uickPay Bank</h1>
+                        </div>
+                          <h1>Welcome Back!</h1>
+                          <p>To keep connected with us please login with your personal info</p>
+                          <button class="ghost" (click)="signIn()">Sign In</button>
+                      </div>
+                      <div class="overlay-panel overlay-right">
+                        <div class="overlayRightContainer">
+                            <img src="../../assets/img/logo-nav.png" alt="">
+                            <h1>uickPay Bank</h1>
+                        </div>
+                           <p>Start your New journey with us Seamlessly</p>
+                          <button class="ghost" (click)="signUp()">Sign Up</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+  </div>
+  </div>
+  </section>

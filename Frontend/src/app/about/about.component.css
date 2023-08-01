@@ -1,0 +1,51 @@
+.about-us {
+    padding: 80px 0;
+    
+  }
+  
+  .about-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .about-text {
+    text-align: left;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .about-us {
+      padding: 40px 0;
+    }
+
+  @media screen and (max-width: 767px){
+    .about-text{
+      
+      text-align: justify;
+    }
+  }
+
+  @media screen and (max-width: 992px){
+    .about-text{
+      
+      text-align: justify;
+    }
+  }
+
+  @media screen and (max-width: 2000px){
+    .abt{
+      text-align: center;
+      margin-top: 40px;
+      
+    }
+  }
+
+
+  
+    .col-lg-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+  

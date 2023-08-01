@@ -1,0 +1,113 @@
+
+<!-- <div class="wrapper " >
+  
+<div *ngIf="flager()">
+    <input type="checkbox" id="btn" hidden checked  #myCheckbox >
+    <label for="btn" class="menu-btn" id="pop"> 
+    <i class="fas fa-bars " > <span >&nbsp;{{subtitle}}</span></i> 
+    <i class="fas fa-caret-left"></i>
+    </label>
+    <nav id="sidebar">
+       <div class="title">
+         <img src="/assets/img/logo.png" width="80%" height="90%" class="p-1">
+       </div>
+       <ul class="list-items">
+          <li class="light"routerLinkActive="active" (click)="styler()"(click)="subtitle = 'Dashboard'" ><a routerLink="/dashboard" ><i class="fas fa-home fa-xl"></i>Dashboard</a></li>
+          <li class="light"routerLinkActive="active" (click)="styler()"(click)="subtitle = 'Send&nbsp;Money'"><a routerLink="/transfer" ><i class="fa-solid fa-money-bill-transfer fa-xl" ></i>Send Money</a></li>
+          <li class="light" routerLinkActive="active" (click)="styler()"(click)="subtitle = 'Branch'"><a routerLink="/branch"><i class="fa-solid fa-gears fa-xl"></i>Branch</a></li>
+          <li class="light" routerLinkActive="active" (click)="styler()"(click)="subtitle = 'Monitor'"><a routerLink="/moniter"><i class="fa-solid fa-gears fa-xl"></i>Monitor</a></li>
+          <li class="light" routerLinkActive="active" (click)="styler()"(click)="subtitle = 'Profile'"><a routerLink="/profile"><i class="fa-solid fa-gears fa-xl"></i>Profle</a></li>
+         
+      
+          <div class="icons">
+            <li class="icons1" routerLinkActive="active" (click)="logout()" (click)="styler()" (click)="styler()"><a ><i class="fas fa-sign-out-alt fa-lg  ms-3"><span class="ms-2">Logout</span></i></a></li>
+           
+          </div>
+       </ul>
+    </nav>
+ </div>
+ <div class="content" id="content1">
+    <router-outlet></router-outlet>
+ </div>
+</div> -->
+<app-header *ngIf="flager()==false"></app-header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white px-3  " *ngIf="flager()==true">
+   <i class="fas fa-bars fa-2xl primary-text ms-0  d-none d-md-block" id="menu-toggle" (click)="toggleSidebar()"></i>
+   <div class="d-flex align-items-center" id="brand">
+      <img src="../assets/img/logo-nav.png" height="50vh" width="50vw">
+      <h2 class="fs-2 m-0 ">QuickPay </h2>  
+   </div>
+   
+   <div class="nav-item nav-profile dropdown ms-auto">
+      <a class="nav-link dropdown-toggle"  data-bs-toggle="dropdown" id="profileDropdown">
+         <i class="fa-solid fa-circle-user fa-2xl"></i>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right navbar-dropdown sizer " aria-labelledby="profileDropdown">
+       
+         <a class="dropdown-item" (click)="profile()">
+            <i class="fa fa-user "></i>
+            Profile
+          </a>
+        <a class="dropdown-item logout" (click)="logout()">
+          <i class="fa fa-power-off "></i>
+          Logout
+        </a>
+      </div>
+   </div>
+ 
+   <i class="fas fa-bars fa-2xl primary-text me-2  d-block d-md-none" id="menu-toggle" (click)="toggleSidebar()"></i>
+       
+   <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+       aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+   </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+           <li class="nav-item ">
+               <a class="nav-link  second-text fw-bold" href="#" id="navbarDropdown"
+                   role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="fas fa-user me-2"></i>UserName
+               </a>
+               
+           </li>
+       </ul>
+   </div> -->
+</nav>
+  
+<div class="d-flex" id="wrapper"  [ngClass]="{ 'toggled': isToggled }" >
+   <!-- Sidebar -->
+   <div class="coloer-gray" id="sidebar-wrapper" *ngIf="flager()==true">
+ <!-- <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><h3 class="a">No Bank</h3></div> -->
+       <div class="list-group list-group-flush my-3 mx-2 h-100 ">
+         <div class="abc" routerLinkActive="active" *ngIf="getRole()=='3'">
+
+            <a routerLink="/monitoring"   class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+               <i class="fa-solid fa-tv me-2"></i>Monitoring</a></div>
+               <div class="abc" routerLinkActive="active" routerLinkActive="active" *ngIf="getRole()=='3'">
+                  <a routerLink="/branch"   class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                     <i class="fa-solid fa-list me-2"></i>Branches</a></div>
+                     <div class="abc" routerLinkActive="active" routerLinkActive="active" *ngIf="getRole()=='2'">
+                        <a routerLink="/manager"   class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+                           <i class="fa-solid fa-list me-2"></i>Accounts</a></div>
+         
+         <div class="abc" routerLinkActive="active" routerLinkActive="active" *ngIf="getRole()=='8'">
+            <a routerLink="/dashboard"   class="list-group-item list-group-item-action bg-transparent second-text fw-bold">
+               <i class="fas fa-light fa-gauge me-2"></i>Dashboard</a></div>
+           <div class="abc" routerLinkActive="active" routerLinkActive="active" *ngIf="getRole()=='8'">
+            <a routerLink="/transfer" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-location-arrow  me-2"></i>Send Money</a></div>
+ 
+                   <div class="abc" routerLinkActive="active" *ngIf="getRole()=='8'">
+           <a  routerLink="/loan" c class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i class="fa-solid fa-hand-holding-dollar me-2"></i>Loans </a></div>
+
+          
+                   
+       </div>
+   </div>
+   <div id="page-content-wrapper">  
+     <router-outlet></router-outlet>
+   </div>
+</div>
+ 

@@ -1,0 +1,239 @@
+<!-- <div class="container-fluid">
+    <div class="apply-loan-container">
+      <div class="tp-wrapper">
+        <div class="container">
+          <form
+            (ngSubmit)="addTransfer()"
+            [formGroup]="transfer_form"
+          >
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa-solid fa-money-bill-trend-up"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="receiverAccountNumber"
+                  [(ngModel)]="addTransferRequest.receiverAccountNumber"
+                  class="form-control"
+                  id="accountNumber"
+                  placeholder="Enter account number"
+                  formControlName="receiverAccountNumber"
+                />
+              </div>
+            </div>
+            <span
+        *ngIf="receiverAccountNumber?.invalid && (receiverAccountNumber?.dirty || receiverAccountNumber?.touched)"
+        class="alert alert-danger"
+      >
+        <span *ngIf="receiverAccountNumber?.errors?.['required']" style="height: 1vh;">
+          Account Number is required.
+        </span>
+        <span *ngIf="receiverAccountNumber?.errors?.['minlength']" style="height: 1vh;">
+          At least 10 characters long.
+        </span>
+      </span>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fa-solid fa-vault"></i
+                  ></span>
+                </div>
+                <input
+                  type="text"
+                  name="ifscCode"
+                  [(ngModel)]="addTransferRequest.ifsccode"
+                  class="form-control"
+                  id="ifscCode"
+                  placeholder="Enter IFSC code"
+                  formControlName="ifscCode"
+                />
+              </div>
+            </div>
+            <span
+        *ngIf="ifscCode?.invalid && (ifscCode?.dirty || ifscCode?.touched)"
+        class="alert alert-danger"
+      >
+        <span *ngIf="ifscCode?.errors?.['required']" class="height:1vh">
+          IFSC Code is required.
+        </span>
+        <span *ngIf="ifscCode?.errors?.['pattern']"> Please enter Valid IFSC Code like 'QPAY0[A-Z or 1-9]' </span>
+      </span>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <input
+                  type="text"
+                  name="receiverAccountName"
+                  [(ngModel)]="addTransferRequest.name"
+                  class="form-control"
+                  id="accountName"
+                  placeholder="Enter account name"
+                  formControlName="receiverAccountName"
+                />
+              </div>
+            </div>
+            <span
+        *ngIf="receiverAccountName?.invalid && (receiverAccountName?.dirty || receiverAccountName?.touched)"
+        class="alert alert-danger"
+      >
+        <span *ngIf="receiverAccountName?.errors?.['required']" class="height:1vh">
+          Accountholder Name is required.
+        </span>
+        <span *ngIf="receiverAccountName?.errors?.['minlength']">
+          At least 3 characters long.
+        </span>
+      </span>
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">₹</span>
+                </div>
+                <input
+                  type="number"
+                  class="form-control"
+                  name="amount"
+                  [(ngModel)]="addTransferRequest.amount"
+                  id="amount"
+                  placeholder="Enter amount"
+                  formControlName="amount"
+                />
+              </div>
+            </div>
+            <span
+            *ngIf="amount?.invalid && (amount?.dirty || amount?.touched)"
+            class="alert alert-danger"
+          >
+            <span *ngIf="amount?.errors?.['required']">
+              Amount is required.
+            </span>
+            </span>
+            <div class="d-flex flex-row justify-content-center">
+            <button type="submit" class="btn btn-primary button open-overlay">
+              Send
+            </button>
+            <button type="reset" class="btn btn-danger button">Reset</button>
+          </div>
+            <div class="overlay">
+              <div class="loader"></div>
+              <div class="completion"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </div> -->
+    <div class="container-fluid">
+      <div class="apply-loan-container">
+        <div class="tp-wrapper">
+          <div class="container">
+            <h1 style="font-size: 2rem; font-weight: 500; text-align:center; margin: 20px auto; color: cornflowerblue;">Send Money</h1>
+            <form (ngSubmit)="addTransfer()" [formGroup]="transfer_form" >
+              <div class="form-group formDiv">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fa-solid fa-money-bill-trend-up fa-xl"></i></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="receiverAccountNumber"
+                    [(ngModel)]="addTransferRequest.receiverAccountNumber"
+                    class="form-control"
+                    id="accountNumber"
+                    placeholder="Enter account number"
+                    formControlName="receiverAccountNumber"
+                  />
+                  
+                </div>
+                <span *ngIf="receiverAccountNumber?.invalid && (receiverAccountNumber?.dirty 
+                            || receiverAccountNumber?.touched)" class="text-danger py-0">
+                  <span *ngIf="receiverAccountNumber?.errors?.['required']">
+                    Account Number is required.
+                  </span>
+                  <span *ngIf="receiverAccountNumber?.errors?.['minlength']">
+                    At least 10 characters long.
+                  </span>
+                </span>
+              </div>
+              
+              <div class="form-group formDiv">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"
+                      ><i class="fa-solid fa-vault fa-xl"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="ifscCode"
+                    [(ngModel)]="addTransferRequest.ifsccode"
+                    class="form-control"
+                    id="ifscCode"
+                    placeholder="Enter IFSC code"
+                    formControlName="ifscCode"
+                  />
+                </div>
+                  <span *ngIf="ifscCode?.invalid && (ifscCode?.dirty || ifscCode?.touched)" class="text-danger py-0">
+                    <span *ngIf="ifscCode?.errors?.['required']">IFSC Code is required.</span>
+                    <span *ngIf="ifscCode?.errors?.['pattern']">  Enter Valid IFSC Code like 'QPAY0[A-Z or 1-9]' </span>
+                  </span>
+              </div>
+          
+              <div class="form-group formDiv">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user fa-xl"></i></span>
+                  </div>
+                  <input
+                    type="text"
+                    name="receiverAccountName"
+                    [(ngModel)]="addTransferRequest.name"
+                    class="form-control"
+                    id="accountName"
+                    placeholder="Enter account holder name"
+                    formControlName="receiverAccountName"
+                  />
+                </div>
+                <span *ngIf="receiverAccountName?.invalid && (receiverAccountName?.dirty || receiverAccountName?.touched)"
+                  class="text-danger py-0">
+                  <span *ngIf="receiverAccountName?.errors?.['required']">Account Holder name is required.</span>
+                  <span *ngIf="receiverAccountName?.errors?.['minlength']">At least 3 characters long.</span>
+                </span>
+              </div>
+              
+              <div class="form-group formDiv">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="font-size: 30px; font-weight: bold;">₹</span>
+                  </div>
+                  <input
+                    type="number"
+                    class="form-control"
+                    name="amount"
+                    [(ngModel)]="addTransferRequest.amount"
+                    id="amount"
+                    placeholder="Enter amount"
+                    formControlName="amount"/>
+                </div>
+                <span *ngIf="amount?.invalid && (amount?.dirty || amount?.touched)" class="text-danger py-0">
+                  <span *ngIf="amount?.errors?.['required']">Amount is required.</span>
+                </span>
+              </div>
+              <div class="buttonDiv">
+                <button type="submit" class="btn btn-primary button open-overlay mt-4">Send</button>
+                <button type="reset" class="btn btn-danger button mt-4">Reset</button>
+              </div>
+              <div class="overlay">
+                <div class="loader"></div>
+                <div class="completion"></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>

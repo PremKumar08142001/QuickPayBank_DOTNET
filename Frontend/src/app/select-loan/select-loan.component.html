@@ -1,0 +1,68 @@
+<div class="select-loan-container" id="select-loan-container">
+
+    <!-- <div class="form-container loan-container"> -->
+
+        <h1 class="pageHeading">Select Your Preferred Loan</h1>
+        <div class="d-flex justify-content-start">
+            <div class="row">
+                <div class="col-lg-4" *ngFor="let loan of allLoansOffered | async" >
+                     <a (click)="onOpenApplyLoanModal(loan.interest,loan.loanType)">
+                        <div class="card">
+                            <img src="{{loan.image}}" alt="Image">
+                            <div class="card-body cardContent">
+                            <div class="card-title">{{loan.loanType}} </div>
+                            <p class="cardDescription"> Get you desired <span style="font-weight: 500; font-size: 0.9rem;">{{loan.loanType}}</span> loan with only <span style="font-weight: 500; font-size: 0.9rem;">{{loan.interest}}%</span> interest</p>
+                          </div>
+                        </div>
+                    </a>
+                </div>
+            
+            </div>
+        </div>
+   <!-- </div> -->
+</div>
+
+<!--Apply Loan Modal-->
+<div class="modal fade" id="applyLoanModal"role="dialog" tabindex="-1" aria-labelledby="updateUserModal" data-bs-backdrop="static" data-bs-keyboard="false"
+aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content modalContent">
+            <div class="modal-header modalHeader">
+                <h4 class="modal-title modalTitle">Apply Loan </h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size: 18px;
+  margin-right:5px;"></button>
+            </div>
+            <div class="modal-body modalBody">
+                <h3>Please Fill The Below Fields</h3>
+                <form [formGroup]="loanForm">
+                    
+                
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" min="500" aria-label="Desired Amount" id="desiredAmount" [(ngModel)]="desiredAmount" formControlName="desiredAmount"/>
+                    <label for="desiredAmount">Desired Amount &#8377;</label>
+                    <label for="desiredAmount" class="loanErrLabel">{{getDesiredAmountErrorMessage()}}</label>
+
+                </div>
+                <div class="form-floating ">
+                    <select class="form-select form-control" id="floatingSelect" [(ngModel)]="desiredTenure" name="desiredTenure" formControlName="desiredTenure">
+                        <option  value=0.5>6 Months</option>
+                        <option selected value=1>12 Months</option>
+                        <option  value=1.5>18 Months</option>
+                        <option  value=2>24 Months</option>
+                        <option  value=2.5>30 Months</option>
+                        <option  value=3>36 Months</option>
+                      </select>
+                    <label for="desiredTenure">Desired Tenure</label>
+                </div>
+                </form>
+                <div class="form-floating ">
+                    <h1 class="text-bold text-center mt-2">Amount to be Paid:{{amountoPay()}}</h1>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="" data-bs-dismiss="modal" class="closeBtn"
+                        >Close</button>
+                    <button data-bs-dismiss="modal" class="applyBtn" (click)="applyLoan(desiredAmount,desiredTenure)" [disabled]="!loanForm.valid">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>

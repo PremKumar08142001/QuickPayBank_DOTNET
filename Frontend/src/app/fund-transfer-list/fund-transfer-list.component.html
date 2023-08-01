@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <h1 class="mb-3">TransferList</h1>
+<table class="table" *ngIf="transfers && transfers.length > 0">
+   <thead>
+     <tr>
+      <th>Id</th>
+      <th>SenderAccount</th>
+      <th>ReceiverAccount</th>
+      <!-- <th>Receiveraccountname</th> -->
+      <th>IFSC Code</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+   <tbody>
+    <tbody>
+        <tr *ngFor="let transfer of transfers">
+          <!-- <td>{{ transfer.id }}</td> -->
+          <td>{{ transfer.senderAccountNumber }}</td>
+          <td>{{ transfer.receiverAccountNumber }}</td>
+          <!-- <td>{{ transfer.receiverAccountName }}</td> -->
+          <!-- <td>{{ transfer.ifscCode }}</td> -->
+          <td>{{ transfer.amount }}</td>
+       </tr>
+  </tbody>
+</table>
+<p *ngIf="!transfers || transfers.length <= 0">No Records</p>
+
+</div>

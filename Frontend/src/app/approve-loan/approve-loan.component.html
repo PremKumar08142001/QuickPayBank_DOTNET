@@ -1,0 +1,92 @@
+<div class="container" id="main-container">
+    <h1 class="pageHeading mt-2">Manage Loan Requests</h1>
+    <div class="pt-3">  
+
+        <table class="table-custom table table-striped table-hover mt-2 ">
+            <thead>
+                <tr>
+                    <!-- <th scope="col">Id</th> -->
+                    <th scope="col">User ID</th>
+                    <th scope="col">User Name</th>
+                    <th scope="col">Loan Type</th>
+                    <th scope="col">Desired loan Amount</th>
+                    <th scope="col">Tenure</th>
+                    <th scope="col">Amount to be paid</th>
+                    <th scope="col">Approve/Reject</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let loan of loans | async">
+                    <!-- <td>{{loan.loanAppliedId}}</td> -->
+                    <td>{{loan.userId}}</td>
+                    <td>{{loan.userName}}</td>
+                    <td>{{loan.loanType}}</td>
+                    <td>&#8377;{{loan.loanAmount}}</td>
+                    <td>{{loan.tenure}}</td>
+                    <td>{{loan.amountToPay}}</td>
+                    <td>
+                        <button class="btn btn-lg rounded-circle text-success"(click)="onOpenApproveModal()"><i class="fa fa-check"></i></button>
+                        <button class="btn btn-lg rounded-circle text-danger" (click)="onOpenRejectModal()"><i class="fa fa-xmark"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!--Reject Modal-->
+<div class="modal " id="rejectLoanModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="rejectLoanModal"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmation </h4>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <h5>Please provide a reason</h5>
+                        <label for="textarea"></label>
+                        <textarea name="comment" [(ngModel)]="msg" class="form-control" id="comment" placeholder="Comment" required #comment="ngModel"></textarea>
+                        <div *ngIf="comment.invalid && (comment.dirty || comment.touched)" style="margin: 0;">
+                            <span *ngIf="comment.errors?.['required']" class="text-danger">Comment is required.</span>
+                        </div>
+                    <div class="modal-footer">
+                        <button type="button" id="" data-dismiss="modal" class="btn btn-secondary" (click)="onCloseRejectModal()">Close</button>
+                        <button data-dismiss="modal" class="btn btn-primary" (click)="rejectReq()">Send</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Approve Modal-->
+<div class="modal " id="approveLoanModal" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="approveLoanModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Confirmation </h4>
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button> -->
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Are you sure</h5>
+                <!-- <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rejectRadioOptions" id="radYes" value="Yes" (change)="onRadioChange($event)">
+                    <label class="form-check-label" for="radYes">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="rejectRadioOptions" id="radNo" value="No" (change)="onRadioChange($event)">
+                    <label class="form-check-label" for="radNo">No</label>
+                </div> -->
+                <div class="modal-footer">
+                    <button type="button" id="" data-dismiss="modal" class="btn btn-secondary">Close</button>
+                    <button data-dismiss="modal" class="btn btn-primary" (click)="approveReq()">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

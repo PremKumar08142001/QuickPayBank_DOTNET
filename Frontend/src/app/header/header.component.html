@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg ">
+  <div class="container-fluid">
+    <img src="../assets/img/logo-nav.png" height="50vh" width="50vw">
+    <h2 class="fs-2 m-0 ">QuickPay </h2>  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item active navItems">
+                  <a class="nav-link" routerLink="/home">Home</a>
+              </li>
+              <li class="nav-item navItems">
+                  <a class="nav-link" [href]="'/home#aboutSection'" >About Us</a>
+              </li>
+              <li class="nav-item navItems">
+                  <a class="nav-link" [href]="'/home#serviceSection'">Services</a>
+              </li>
+              <li class="nav-item" style="margin-left: 10px;">
+                  <button class="btn btn-sm btn-outline-primary" style="margin: 5px 5px;" (click)="login()">Sign In</button>
+                  <button class="btn  btn-sm btn-outline-primary" style="margin: 5px 5px;" (click)="login()">Sign Up</button>
+                 </li>
+          </ul>
+      </div>
+  </div>
+</nav>

@@ -1,0 +1,34 @@
+<div class="chart-container">
+
+    <div class="bar-chart">
+        <ngx-charts-bar-vertical-2d
+            [view]="[500, 400]"
+            [scheme]="customColorSchemeBar"
+            [results]="data"
+            [xAxis]="true"
+            [yAxis]="true"
+            [showXAxisLabel]="true"
+            [showYAxisLabel]="true"
+            [xAxisLabel]="'Time of the Day'"
+            [yAxisLabel]="'Number of Transactions'"
+            >
+        </ngx-charts-bar-vertical-2d>
+    </div>
+
+    <div class="pie-chart">
+        <ngx-charts-pie-chart
+        [view]="[400, 400]"
+        [scheme]="customColorScheme"
+        [labels]="true"
+        [results]="pieData"
+        [doughnut]="true"
+        [explodeSlices]="false"
+        [arcWidth]="0.2"
+        >
+    </ngx-charts-pie-chart>
+    <h5>Transaction Percentage</h5>
+    </div>
+
+</div>
+
+

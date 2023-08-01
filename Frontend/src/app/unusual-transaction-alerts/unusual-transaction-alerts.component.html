@@ -1,0 +1,89 @@
+<mat-card  class="card">
+    <div class="card-title">
+        <h3>Unusual Transaction Alerts </h3>
+        <div class="icon-with-message">
+            <mat-icon>cached</mat-icon>
+           
+        </div>
+    </div>
+        <mat-card-content>
+            <div *ngFor="let group of suspiciousTransactions | keyvalue">
+                <!-- <h3>User ID: {{ group.key }}</h3> -->
+                <!-- <p>Transaction Count: {{ group.value?.count }}</p> -->
+                <mat-card class="card-content" [ngStyle]="{'cursor':'pointer'}">
+                    <mat-icon [ngStyle]="{'backgroundColor':'orange', 'color': 'white', 'borderRadius': '10px', 'margin': '5px'}">notifications</mat-icon>
+                    <mat-card-header (click)="handleTransactions(group.value?._userName)">
+                        <mat-card-title [ngStyle]="{'color': 'grey', 'fontSize': 'large'}">
+                            Customer <span [ngStyle]="{'color': 'aqua'}">{{ group.value?._userName }}</span> did more than <span>{{ group.value?.count }}</span> transactions in the same week
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <!-- <button [ngStyle]="{'backgroundColor':'white', 'border': 'none', 'margin-top': '15px'}" [matMenuTriggerFor]="menu">
+                            <mat-icon [ngStyle]="{'color':'aqua'}">more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                          <button mat-menu-item (click)="viewCustomerDetails(group?.key)">
+                              <mat-icon [ngStyle]="{'color': 'grey'}" class="hollow-icon">person_outline</mat-icon>
+                            <span [ngStyle]="{'color': 'aqua'}">
+                                View Customer Details
+                            </span>
+                        </button>
+                          <button mat-menu-item (click)="viewCustomerTransactions(group?.key)">
+                            <mat-icon [ngStyle]="{'color': 'grey'}">
+                                swap_horiz</mat-icon>
+                            <span [ngStyle]="{'color': 'aqua'}">
+                                View Transactions
+                            </span>
+                        </button>
+                        </mat-menu> -->
+                    </mat-card-content>
+                  </mat-card>
+              </div>
+            <!-- <mat-card class="card-content">
+                <mat-icon [ngStyle]="{'backgroundColor':'orange', 'color': 'white', 'borderRadius': '10px',}">notifications</mat-icon>
+                <mat-card-header>
+                    <mat-card-title [ngStyle]="{'color': 'grey', 'fontSize': 'large'}">
+                        Customer <span [ngStyle]="{'color': 'aqua'}">John Smith</span> did more than 10 transactions in the same week
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <button [ngStyle]="{'backgroundColor':'white', 'border': 'none'}" [matMenuTriggerFor]="menu">
+                        <mat-icon [ngStyle]="{'color':'aqua'}">more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="viewCustomerDetails()">
+                          <mat-icon [ngStyle]="{'color': 'grey'}" class="hollow-icon">person_outline</mat-icon>
+                        <span [ngStyle]="{'color': 'aqua'}">
+                            View Customer Details
+                        </span>
+                    </button>
+                      <button mat-menu-item (click)="viewCustomerTransactions()">
+                        <mat-icon [ngStyle]="{'color': 'grey'}">
+                            swap_horiz</mat-icon>
+                        <span [ngStyle]="{'color': 'aqua'}">
+                            View Transactions
+                        </span>
+                    </button>
+                    </mat-menu>
+                </mat-card-content>
+              </mat-card>
+            <mat-card class="card-content">
+                <mat-icon [ngStyle]="{'backgroundColor':'orange', 'color': 'white', 'borderRadius': '10px',}">notifications</mat-icon>
+                <mat-card-header>
+                    <mat-card-title [ngStyle]="{'color': 'grey', 'fontSize': 'large'}">
+                        Customer <span [ngStyle]="{'color': 'aqua'}">John Doe</span> did more than 15 transactions in the same week
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <button [ngStyle]="{'backgroundColor':'white', 'border': 'none'}" [matMenuTriggerFor]="menu">
+                        <mat-icon [ngStyle]="{'color':'aqua'}">more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item (click)="viewCustomerDetails()">View Customer Details</button>
+                      <button mat-menu-item (click)="viewCustomerTransactions()">View Customer Transactions</button>
+                    </mat-menu>
+                </mat-card-content>
+              </mat-card>
+             -->
+        </mat-card-content>
+</mat-card>

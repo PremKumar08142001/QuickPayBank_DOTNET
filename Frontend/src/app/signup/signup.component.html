@@ -1,0 +1,68 @@
+<div class="container" #container>
+    <div class="row">
+
+    
+    <div class="col col-md-6 col-sm-12">
+        <div class="form-container sign-up-container">
+            <form  [formGroup] = "loginform" (ngSubmit)="onSubmit()" class="mt-5">
+                <h2 class="text-center text-bold">Login</h2>
+                <div class="input-group mb-3">
+                  <span class="input-group-text w-25" id="inputGroup-sizing-default">Email</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="email">
+                </div>
+                <span *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger  m-1">
+                  <span *ngIf="email?.errors?.['required']" class="height:1vh"> Email is required. </span>
+                  <span *ngIf="email?.errors?.['pattern']">
+                    Not an email
+                  </span>
+                </span>
+                <div class="input-group mb-3">
+                  <span class="input-group-text w-25" id="inputGroup-sizing-default">Passowrd</span>
+                  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"  formControlName="password">
+                </div>
+                <span *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="alert alert-danger  m-1">
+                  <span *ngIf="password?.errors?.['required']" class="height:1vh"> Mobile is required. </span>
+                  <span *ngIf="password?.errors?.['minlength']">
+                    passwordshould be minimum 4 letters
+                  </span>
+                  </span>
+              
+                <button class="button btn btn-primary w-100" type="submit" [disabled]="!loginform.valid" >Register</button>
+              </form>
+    
+        </div>
+    </div>
+    <div class="col col-md-6 col-sm-12">    
+        <div class="form-container sign-in-container">
+            <form action="#">
+                <h1>Create Account</h1>
+                <!-- <div class="social-container">
+                            <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                        <span>or use your email for registration</span> -->
+                <input type="text" placeholder="Name" />
+                <input type="email" placeholder="Email" />
+                <input type="password" placeholder="Password" />
+                <button>Sign Up</button>
+            </form>
+        </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>NoBank</h1>
+                        <p>Start your New journey with us Seamlessly</p>
+                        <button class="ghost" (click)="signUp()">Sign Up</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Welcome Back!</h1>
+                        <p>To keep connected with us please login with your personal info</p>
+                        <button class="ghost" (click)="signIn()">Sign In</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>

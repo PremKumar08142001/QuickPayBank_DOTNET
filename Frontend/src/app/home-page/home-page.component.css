@@ -1,0 +1,343 @@
+.btnGetStarted {
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+  height: 20%;
+  max-width: 100%;
+  min-width: 25%; 
+  background-color: #fff;
+  opacity: 0.6;
+  color:black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.75);
+  transition: all 0.3s;
+
+}
+
+.btnGetStarted:hover {
+  transform: scale(1.2);
+}
+
+.btnGetStarted::after{
+  content: "";
+  display: block;
+  height: 6px;
+  width: 100%;
+  background-color: #2bd576;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin:left ;
+}
+.btnGetStarted:hover::after{
+  transform: scaleX(1);
+}
+
+.main {
+  background: url(/assets/img/happy-male-entrepreneur-using-desktop-pc-while-working-office-there-are-people-background.jpg) no-repeat;
+  background-size: cover;
+  object-position: center;
+  object-fit: cover;
+  .blurDiv
+  {
+      height: 100vh;
+      backdrop-filter:blur(3px);
+      text-align: center;
+
+      .homeContent{
+          position: absolute;
+          top: 20%;
+          left:10%
+      }
+  }
+
+}
+@media screen and (min-width: 100px) and (max-width: 767px) {
+
+  /* Styles for screens up to 767px wide (mobile) */
+  .main {
+      height: 100%;
+      width: 100%;
+      /* Set a different height for mobile */
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+  /* Styles for screens between 768px and 991px wide (tablets) */
+  .main {
+
+      height: 100%;
+      width: 100%;
+      /* Set a different height for tablets */
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+  /* Styles for screens larger than or equal to 992px wide (desktops) */
+  .main {
+      min-height: 100vh;
+      /* Set a different height for desktops */
+  }
+}
+
+.main h1 {
+  font-size: 4rem;
+  line-height: normal;
+  font-weight: 700;
+  color: white;
+  text-decoration: white;
+  margin-top: 80px;
+}
+
+@media screen and (min-width:481px) and (max-width: 767px) {
+  .main h1 {
+      font-size: 3rem;
+  }
+} 
+
+/* @media screen and (max-width: 480px) {
+  .main h1 {
+      font-size: 1.5rem;
+  }
+} */
+@media screen and (min-width: 100px) and (max-width: 480px) {
+  .main h1 {
+      font-size: 2rem;
+  }
+}
+
+
+.btn2 {
+  height: 20%;
+  max-width: 100%;
+  min-width: 25%;
+  outline: none;
+  border: none;
+  background: crimson;
+  color: white;
+  font-weight: 700;
+  border-radius: 60px;
+  transition: all 0.3s;
+
+}
+
+.btn2:hover {
+  transform: scale(1.2);
+
+}
+
+.main h1 {
+  font-size: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btnClass{
+border-radius: 15px;
+}
+
+.btn0 {
+  height: 35px;
+  width: 40%;
+  outline: none;
+  border: none;
+  background: crimson;
+  color: white;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.btn0:hover {
+  translate: scale(1.2);
+  background: rgb(252, 8, 65);
+
+}
+
+
+.servicesDiv{
+  min-width: 60%;
+  max-width: 100%;
+
+  .servicesHeading{
+      color:cornflowerblue;
+      font-size: 3.5rem;
+      line-height: normal;
+  }
+
+      .card {
+          transition: all 0.3s;
+          margin: 10px;
+      }
+  
+      .card:hover {
+          transform: scale(1.10);
+          -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+      }
+}
+
+
+.aboutDiv{
+  align-items: center;
+  justify-content: center;
+  min-width: 60%;
+  max-width: 100%;
+
+  .aboutHeading{
+      color: cornflowerblue;
+      font-size: 3.5rem;
+      line-height: normal;
+  }
+ .aboutRow2{
+      justify-content: center;
+
+  .aboutPara {
+          text-align: justify;
+          font-size: 1rem;
+      }
+  }
+  
+}
+
+/* Pricing Section*/
+
+.featuresDiv{
+
+  .featuresImages {
+      /* transform: scale(1.5); */
+      /* animation: scaleIn 0.5s forwards; */
+      transition: all 0.3s;
+      margin: 10px;
+  }
+  
+  .featuresImages:hover {
+      transform: scale(1.40);
+  }
+}
+
+.pricingDiv{
+  min-width: 60%;
+      max-width: 100%;
+  
+      .pricingHeading {
+          color:cornflowerblue;
+          font-size: 3.5rem;
+          line-height: normal;
+      }
+      .pricingCard{
+          justify-content: center;
+          align-content: center;
+          text-align: center;
+      }
+      .priceTag{
+          font-size: 26px;
+          color:gray
+      }
+      .pricingPara {
+           text-align:left;
+           line-height: normal;
+           font-size: 1rem;
+       }
+
+      .cardProfessional{
+              transform: scale(1.05);
+                  -webkit-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+                  -moz-box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+                  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.75);
+      }
+
+      .strickedText{
+          text-decoration: line-through;
+          opacity: 0.5;
+      }
+
+}
+.carouselSection{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  .carouselHeading{
+      color: cornflowerblue;
+      font-size: 3.5rem;
+      line-height: normal;
+  }
+  .carouselDiv {
+  
+          height: auto;
+          max-width: 70%;
+          margin: 0px auto 30px auto;
+  
+  
+          .carousel-img {
+              height: 100%;
+              width: 100%;
+              .carouselDesc {
+                      margin: auto;
+                      position: relative;
+              
+                      .carouselInnerHeading {
+                          color: cornflowerblue;
+                          font-size: 20px;
+                      }
+              
+                  }
+          }
+          
+      }
+}
+/*----------------Footer Section*------------------*/
+.futer {
+  background: rgb(255, 255, 255);
+  width: 100%;
+
+}
+
+.col {
+  width: 0ch;
+  height: 0ch;
+}
+
+.footer_profile ul li a {
+  background: #554c86;
+  width: 40px;
+  height: 40px;
+  display: block;
+  text-align: center;
+  margin-right: 5px;
+  border-radius: 50%;
+  line-height: 40px;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+  color: #fff;
+}
+
+.footer_profile {
+  margin-bottom: 40px;
+}
+
+.footer_profile ul {
+  list-style: outside none none;
+  margin: 0;
+  padding: 0
+}
+
+.footer_profile ul li {
+  display: inline-block;
+}
+
+@media only screen and (max-width:480px) {
+  .footer_profile ul li {
+      margin: 2px;
+  }
+}
+
+.footer_profile ul li a img {
+  width: 60px;
+}

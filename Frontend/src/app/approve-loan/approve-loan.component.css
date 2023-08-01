@@ -1,0 +1,16 @@
+.table-custom{
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.pageHeading{
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.25);
+    font-size: 40px;
+}
+th{
+    font-size: 14px;
+    font-weight: bold;
+}
+td{
+    font-size: 12px;
+}

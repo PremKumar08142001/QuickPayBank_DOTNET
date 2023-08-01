@@ -1,0 +1,43 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+.card {
+    margin: 30px;
+    height: fit-content;
+    display: inline-block;
+    width: 95%;
+}
+
+.card h3{
+    /* margin: 15px 15px; */
+    font-weight: bold;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+  
+.icon-with-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icon-text-container {
+    display: flex;
+    align-items: center;
+  }
+  
+.icon {
+    margin-right: 5px;
+}
+  
