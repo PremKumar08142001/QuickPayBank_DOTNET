@@ -21,6 +21,7 @@ export class ManagerComponent implements OnInit{
   
   ngOnInit(): void {
     this.branchService.getBranchByName(localStorage.getItem("name")).subscribe(resp=>{this.branch=resp;
+      console.log(this.branch,"..............")
       this.accountService.getAccounts(this.branch.branchCode).subscribe(resp=>{this.accountlist=resp;
         this.collectionSize=this.accountlist.length;
         this.refreshCountries()

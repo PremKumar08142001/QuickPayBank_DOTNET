@@ -61,7 +61,7 @@ namespace BranchAPI.Controllers
             {
                 var account = await _branchService.GetByBranchId(username);
 
-                return Ok(true);
+                return Ok(account);
 
             }
             catch (Exception ex)
